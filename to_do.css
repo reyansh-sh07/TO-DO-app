@@ -1,0 +1,76 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+  background-color: #546B41;
+  color:#FFF8EC;
+}
+#todo{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 30px;
+    min-height: 200px;
+    width : 60%;
+    max-width:700px;
+    border : 2px solid black;
+    border-radius: 7px;
+    box-shadow: 10px 10px 10px  black;
+    margin: 80px auto;
+    background-color:#99AD7A;
+}
+#input_area{
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+#input_box{
+    margin: 10px ;
+    padding: 5px;
+    height:40px ;
+    width: 70%;
+    max-width: 400px;
+    background-color: rgb(220, 204, 172);
+    border-radius: 5px;
+    color: rgb(0, 0, 0);
+    font-size: 1em;
+}
+#insert{
+    height: 30px;
+    width: 60px;
+    border-radius: 10px;
+    background-color: rgb(220, 204, 172);
+}
+#task_container{
+    margin: 10px 5px 20px 10px;
+    width: 100%;
+    max-width: 500px;
+}
+#tasks_list{
+    list-style: none;
+    font-size: 20px;
+    padding : 10px;
+}
+#tasks_list > li{
+    cursor: pointer;
+}
+#task_completed{
+    height: 30px;
+    width: 70px;
+    border-radius: 8px;
+    background-color: rgb(220, 204, 172);
+    padding: 2px;
+    margin: 5px;
+}
+.completed {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
