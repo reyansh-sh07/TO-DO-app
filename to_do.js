@@ -21,12 +21,13 @@ function renderTasks() {
         let li = document.createElement("li");
         let btn = document.createElement("button");
         let editBtn = document.createElement("button");
+        
+        li.textContent = "➙ " + task.text + "   ";
+        li.dataset.index = index;
 
         btn.textContent = "❌";
         editBtn.textContent = "✏️";
 
-        li.textContent = "➙ " + task.text + "   ";
-        li.dataset.index = index;
 
         if (task.completed) {
             li.classList.add("completed");
@@ -46,9 +47,9 @@ function renderTasks() {
                 tasks[index].text = newTask.trim();
                 save_tasks();
                 renderTasks();
+                e.stopPropagation();
             }
 
-            e.stopPropagation();
         });
 
         li.appendChild(btn);
