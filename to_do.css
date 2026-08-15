@@ -4,73 +4,145 @@
   box-sizing: border-box;
 }
 body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fcf2e5;
   font-family: Arial, sans-serif;
-  line-height: 1.5;
-  background-color: #546B41;
-  color:#FFF8EC;
+  color: #524646;
 }
-#todo{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 30px;
-    min-height: 200px;
-    width : 60%;
-    max-width:700px;
-    border : 2px solid black;
-    border-radius: 7px;
-    box-shadow: 10px 10px 10px  black;
-    margin: 80px auto;
-    background-color:#99AD7A;
+#todo {
+  width: 90%;
+  max-width: 650px;
+  background-color: #ffffff;
+  padding: 35px;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(82, 70, 70, 0.15);
 }
-#input_area{
-    display: flex;
-    gap: 10px;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
+.heading {
+  text-align: center;
+  margin-bottom: 28px;
 }
-#input_box{
-    margin: 10px ;
-    padding: 5px;
-    height:40px ;
-    width: 70%;
-    max-width: 400px;
-    background-color: rgb(220, 204, 172);
-    border-radius: 5px;
-    color: rgb(0, 0, 0);
-    font-size: 1em;
+.heading h1 {
+  color: #524646;
+  font-size: 32px;
+  margin-bottom: 8px;
 }
-#insert{
-    height: 30px;
-    width: 60px;
-    border-radius: 10px;
-    background-color: rgb(220, 204, 172);
+.heading p {
+  color: #a8a492;
+  font-size: 15px;
 }
-#task_container{
-    margin: 10px 5px 20px 10px;
-    width: 100%;
-    max-width: 500px;
+#input_area {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
 }
-#tasks_list{
-    list-style: none;
-    font-size: 20px;
-    padding : 10px;
+#input_box {
+  flex: 1;
+  padding: 13px 15px;
+  border: 2px solid #a8a492;
+  border-radius: 10px;
+  outline: none;
+  font-size: 15px;
+  color: #524646;
+  background-color: #fcf2e5;
 }
-#tasks_list > li{
-    cursor: pointer;
+#input_box:focus {
+  border-color: #ec5b38;
 }
-#task_completed{
-    height: 30px;
-    width: 70px;
-    border-radius: 8px;
-    background-color: rgb(220, 204, 172);
-    padding: 2px;
-    margin: 5px;
+#insert {
+  padding: 0 20px;
+  border: none;
+  border-radius: 10px;
+  background-color: #ec5b38;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s ease;
 }
-.completed {
+#insert:hover {
+  background-color: #524646;
+  transform: translateY(-2px);
+}
+#task_container {
+  margin-bottom: 20px;
+}
+#tasks_list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+#tasks_list li {
+  display: flex;
+  align-items: center;
+  min-height: 55px;
+  padding: 12px 14px;
+  border: 1px solid #a8a492;
+  border-radius: 12px;
+  background-color: #fcf2e5;
+  color: #524646;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+#tasks_list li:hover {
+  background-color: #a8a492;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(82, 70, 70, 0.12);
+}
+#tasks_list li.completed {
   text-decoration: line-through;
   opacity: 0.6;
+  background-color: #a8a492;
 }
-
+#tasks_list li button {
+  margin-left: auto;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 5px;
+  border-radius: 6px;
+  transition: 0.2s ease;
+}
+#tasks_list li button + button {
+  margin-left: 5px;
+}
+#tasks_list li button:hover {
+  background-color: rgba(82, 70, 70, 0.15);
+  transform: scale(1.1);
+}
+#task_completed {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background-color: #524646;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+#task_completed:hover {
+  background-color: #ec5b38;
+  transform: translateY(-2px);
+}
+@media (max-width: 600px) {
+  #todo {
+    width: 94%;
+    padding: 25px 20px;
+  }
+  .heading h1 {
+    font-size: 26px;
+  }
+  #input_area {
+    flex-direction: column;
+  }
+  #insert {
+    padding: 12px;
+  }
+}
